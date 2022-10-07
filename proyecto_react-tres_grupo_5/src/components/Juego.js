@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { getPalabraRandom } from './getPalabraRandom.js';
 import { letras } from './letras.js';
 import { AhorcadoImg } from './AhorcadoImg.jsx';
+import '../styles/game.css';
 function Juego() {
   const [verOpcion, setVerOpcion] = useState('btn-option');
   const [intentos, setIntentos] = useState(0);
@@ -44,8 +45,8 @@ function Juego() {
   return (
     <div className='game'>
       <AhorcadoImg imageNumber={intentos} />
-      <h3>{Incog}</h3>
-      <h3>Intentos: {intentos} / 7</h3>
+      <h3 className='h3__incognita-conteiner'>{Incog}</h3>
+      <h3 className='h3__intentos-conteiner'>Intentos: {intentos} / 7</h3>
       <div className='respuestas'>
         {
           (perder)
@@ -71,8 +72,8 @@ function Juego() {
         }
       </div>
       <div className='botones-page-game'>
-        <button><a href="/Banner">Banner</a></button>
-        <button><a href="/Juego">Reiniciar</a></button>
+        <a href="/Banner"><button>Home</button></a>
+        <a href="/Juego"><button>Reiniciar</button></a>
       </div>
     </div>
   )

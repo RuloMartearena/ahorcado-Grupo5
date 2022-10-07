@@ -6,6 +6,7 @@ import image4 from '../Ahorcado/4.png';
 import image5 from '../Ahorcado/5.png';
 import image6 from '../Ahorcado/6.png';
 import image7 from '../Ahorcado/7.png';
+import '../styles/game.css';
 
 const images = [
     image0,
@@ -25,11 +26,15 @@ export function AhorcadoImg({ imageNumber }) {
     }
 
     return (
-        <img
-            className='colgado-image'
-            src={images[imageNumber]}
-            alt="Imagen del ahorcado"
-            width="450px"
-        />
+        <section className='section__main__img-conteiner'>
+            <h2 className='h2title-game'>Ahorcadito</h2>
+            <div className='div__img-conteiner'>
+                <img
+                    className='colgado-image'
+                    src={images[imageNumber]}
+                    alt="Imagen del ahorcado"
+                />
+            </div>
+        </section>
     )
 }
