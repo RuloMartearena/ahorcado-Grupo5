@@ -7,7 +7,7 @@ import image5 from '../Ahorcado/5.png';
 import image6 from '../Ahorcado/6.png';
 import image7 from '../Ahorcado/7.png';
 
-const images= [
+const images = [
     image0,
     image1,
     image2,
@@ -18,16 +18,16 @@ const images= [
     image7,
 ]
 
-export function AhorcadoImg({imageNumber}) {
+export function AhorcadoImg({ imageNumber }) {
 
-    if(imageNumber >= 7){
+    if (imageNumber >= 7) {
         imageNumber = 7;
     }
 
     return (
         <img
-            className='colgado-image' 
-            src={images[imageNumber]} 
+            className='colgado-image'
+            src={images[imageNumber]}
             alt="Imagen del ahorcado"
             width="450px"
         />
