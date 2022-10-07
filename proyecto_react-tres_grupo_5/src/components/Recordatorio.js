@@ -9,7 +9,7 @@ export default function Recordatorio() {
                 <ul className="ul__recordatorio">
                     <li className='li__recordatorio'>Si en una palabra se repite la misma letra, automaticamente se completaran</li>
                     <li className='li__recordatorio'>Si erras una palabra, de a poco lo iras ahorcando</li>
-                    <li className='li__recordatorio'>No puedes equivocarte más de 5 veces</li>
+                    <li className='li__recordatorio'>No puedes equivocarte más de 7 veces</li>
                     <li className='li__recordatorio'>Si completas las palabras, GANARAS!</li>
                 </ul>
             </div>
