@@ -1,22 +1,23 @@
 :root {
-  --var-colorBackground: #335c67;
-  --var-colorFont: #fff3b0;
-  --var-colorOne: #e09f3e;
-  --var-colorTwo: #9e2a2b;
-  --var-colorThree: #540b0e;
+  --var-colorBackground: #0c5a23;
+  --var-colorFont: #b4e7f8;
+  --var-colorOne: #152528;
+  --var-colorTwo: #08485e;
+  --var-colorThree: #3cb0cd;
+  --var-colorFour: #7cd5f3;
+  --var-colorFive: #adffbc;
+  --var-colorSix: #1bee9a;
+  --var-colorSeven: #21c063;
+  --var-colorEight: #229631;
 }
 
 body {
-  background-color: var(--var-colorBackground);
-  margin: 0;
+  background-color: var(--var-colorEight);
   color: var(--var-colorFont);
+  margin: 0;
 }
 
-li {
-  list-style: none;
-}
-
-/* Inicio */
+/* --- Contenido --- */
 .section__inicio-conteiner {
   display: flex;
   flex-direction: column;
@@ -24,41 +25,51 @@ li {
   justify-content: center;
   border-radius: 25px;
 }
-
-.title_home{
-  background: black;
-  box-shadow: 5px 5px gray;
-  border-top-left-radius: 30px 30px;
-  border-bottom-right-radius: 30px 30px;
-  padding: 0 20px;
-  font-size: 30px;
+.title_home {
+  background-color: var(--var-colorTwo);
+  box-shadow: 10px 10px var(--var-colorOne);
+  text-align: center;
+  margin: 15px 45px 0 45px;
+  font-size: 50px;
 }
-
 .img__inico {
   width: 300px;
   height: auto;
   border-radius: 20%;
-  box-shadow: 8px 8px gray;
+  border: 5px solid var(--var-colorTwo);
+  margin-top: 20px;
 }
-
-.button_home{
-  background: black;
-  font-size: 20px;
-  border-radius: 25px;
-  display: inline-block;
-  box-shadow: 5px 5px gray;
-  border-radius: 25px;
+.h2__instruccion {
+  background-color: var(--var-colorTwo);
+  box-shadow: 10px 10px var(--var-colorOne);
+  text-align: center;
+  margin: 15px 45px 25px 45px;
+  font-size: 35px;
 }
-
-.button_home:hover, .button_home:active, .button_home:focus{
-  color: black;
-  background-color: gray;
+.div__button-conteiner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
-.button_font{
-  text-decoration: none;
-  color: #fff3b0;
+.button__return {
+  color: var(--var-colorFont);
+  background-color: var(--var-colorOne);
+  font-size: 40px;
+  border: 0;
+  cursor: pointer;
+  margin: 80px 50px 0 50px;
+  border: 2px solid var(--var-colorTwo);
+  border-radius: 5%;
 }
-
-
-/* /Inicio */
+.button__return:hover {
+  animation-name: buttonAnimation;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+@keyframes buttonAnimation {
+  100% {
+    background-color: var(--var-colorFour);
+    color: black;
+  }
+}
+/* --- /Contenido --- */

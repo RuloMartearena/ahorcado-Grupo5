@@ -3,17 +3,15 @@ import '../styles/home.css';
 export default function home() {
     return (
         <section className="section__inicio-conteiner">
-            <h1 className='title_home'>Hora de jugar al Ahorcadito!!</h1>
+            <h2 className='title_home'>Ahorcadito</h2>
             <div className="home-img">
-                <a href="/Juego"> <img className="img__inico" src="../img/logo.jpg" alt="Logo del Juego" /> </a>
+                <a href="/Juego"><img className="img__inico" src="../img/logo.jpg" alt="Logo del Juego" /> </a>
             </div>
-            <h2 className='title_home'>Dar click a la imagen para comenzar</h2>
-            <div >
-                <button className='button_home'> <a href="/Reglas" className='button_font' >Reglas</a> </button>
-
-                <button className='button_home'><a href="/Recordatorios" className='button_font' >Recordatorios</a></button>
-
-                <button className='button_home'><a href="/Desarrolladores" className='button_font'>Desarrolladores</a></button>
+            <h2 className='h2__instruccion'>Dar click a la imagen para comenzar</h2>
+            <div className='div__button-conteiner'>
+                <a href="/Recordatorios" className='button_font'><button className='button__return'>Recordatorios</button></a>
+                <a href="/Reglas" className='button_font'><button className='button__return'>Reglas</button></a>
+                <a href="/Desarrolladores" className='button_font'><button className='button__return'>Desarrolladores</button></a>
             </div>
         </section>
     );
