@@ -1,103 +1,84 @@
-import { useState } from "react";
-export default function Juego() {
-    const Palabras = [
-        "MEDIA",
-        "OTORRINOLARINGOLO",
-        "CITAR",
-        "CHIMICHURRI",
-        "DOCUMENTO",
-        "PROFESOR",
-        "ESPINAS",
-        "MARCOS",
-        "MARGARITA",
-        "CODIGO",
-        "BOCA",
-        "RIVER",
-        "KAKAROTTO",
-        "VEGETA"
-    ]
+import { useEffect, useState } from 'react';
+import {Link} from 'react-router-dom'
+//Importando Funciones
+import { getPalabraRandom } from './getPalabraRandom.js';
+import { letras } from './letras.js';
+import '../assets/styles/Game.css'
+import '../assets/styles/Button.css'
+import {AhorcadoImg} from './AhorcadoImg.jsx';
+function Juego() {
+  const [verOpcion, setVerOpcion] = useState('btn-option');
+  const [intentos, setIntentos] = useState(0);
+  const [selectWord, setSelectWord] = useState(getPalabraRandom);
+  const [Incog, setIncog] = useState('_ '.repeat(selectWord.length));
+  const [perder, setPerder] = useState(false);
+  const [ganar, setGanar] = useState(false);
 
-    const Letras = [
-        "A", "B", "C", "D", "E", "F", "G", "H", "I", "J",
-        "K", "L", "M", "N", "Ñ", "O", "P", "Q", "R", "S",
-        "T", "U", "V", "W", "X", "Y", "Z",
-    ]
+  useEffect(() => {
+    if(intentos === 7){
+      setPerder(true);
+      setVerOpcion('ocultar');
+    }
+  }, [intentos])
 
-    const [SelectWord, setSelectWord] = useState("");//Palabras[Math.floor(Math.random() * Palabras.length)]
-    const [PalabraIncog, setPalabraIncog] = useState(Array);
-    const [Incog, setIncog] = useState(Array);
-    const [eleccionJugador, setEleccionJugador] = useState({});
-    const [gano,setGano]=useState(false);
-    const [inicio,setInicio]=useState(false);
+  useEffect(() => {
+    const actualIncog = Incog.split(' ').join('');
+    if(actualIncog === selectWord){
+      setGanar(true);
+      setVerOpcion('ocultar');
+    }
+  }, [Incog,selectWord])
 
-    let cant_errores = 0;
-    let cant_aciertos = 0;
-    let source = `img/${cant_errores}.png`;
-    let gane="° ° ° ° ° ° ° ° °"
-
-    const elegirOpcion = (event) => {
-        const jugador = Letras.find(e => e === event.target.textContent);
-        setEleccionJugador(jugador);
+  const chequearLetra = (letter) => {
+    if(perder) return;
+    if(!selectWord.includes(letter)){
+      setIntentos(Math.min(intentos + 1, 9));
+      return;
+    }
+    const IncogArray = Incog.split(' ');
+    for(let i=0; i<selectWord.length; i++){
+      if(selectWord[i] === letter){
+        IncogArray[i] = letter;
+      }
     }
 
-    const Opcion = (props) => {
-        return (
-            <button className="option" onClick={props.elegir}>
-                {props.valor}
-            </button>
-        )
-    }
-    const randomWord = () => {
-        setSelectWord(Palabras[Math.floor(Math.random() * Palabras.length)]);
-        setPalabraIncog(Array.from(SelectWord));
-        setIncog(Array(SelectWord.length).fill("|?|"));
-        setInicio(true);
-    }
-
-    for (var i = 0; i !== SelectWord.length; i++) {
-        if (eleccionJugador === PalabraIncog[i]) {
-            Incog[i] = eleccionJugador;
-            cant_aciertos++;
-        } else {
-            cant_errores++;
-            console.log("No wey");
-        };
-    };
-
-    if (cant_errores === 7) {
-        gane="Perdiste, la palabra era " + SelectWord;
-       
-    };
-    if (Incog === PalabraIncog ) {
-        gane = "Ganaste!! SIIUUUUUU";
-    }
-
-    return (
-        <div>
-            <section>
-
-                <button onClick={randomWord}>{inicio ?<p>seguro???</p>:<p>Start</p> }</button>
-            </section>
-            <section >
-                <div className="gameplay__div-choices">
-                <img src={source} alt="Ahorcado" />
-                    {Incog.map((index,elemento) => (
-                        <p key={elemento}>{index}</p>
-                    ))}
-                    {PalabraIncog}
-                </div>
-            </section>
-            <div className="gameplay__div-choices">
-                {gano ?<h2>{gane}</h2>: <h2>Aque no adivinas Bueyyyy</h2> }
-                {Letras.map((e, index) =>
-                    <Opcion key={index}
-                        elegir={elegirOpcion}
-                        valor={Letras[index]} />)
-                }
-
-            </div>
-
+    setIncog(IncogArray.join(' '));
+  }
+  return (
+    <div className='game'>
+        <AhorcadoImg imageNumber = {intentos} />
+        <h3>{Incog}</h3>
+        <h3>Intentos: {intentos} / 7</h3>
+        <div className='respuestas'>
+          {
+              (perder) 
+              ? <h2 className='mensaje'>¡Perdiste! La palabra era: {selectWord}</h2> 
+              : ''
+          }
+          {
+              (ganar)
+              ? <h2 className='mensaje'>Felicidades: ¡Ganaste!</h2>
+              : ''
+          }
         </div>
-
-    );
+        <div className='opciones'>
+          {
+              letras.map((letra)=> (
+                <button className={verOpcion}
+                key={letra}
+                onClick={()=> chequearLetra(letra)}
+                >
+                {letra}
+                </button>
+              ))
+            }
+        </div>
+        <div className='botones-page-game'>
+            <button><a href="/Banner">Banner</a></button>
+            <button><a href="/Juego">Reiniciar</a></button>
+        </div>
+    </div>
+  )
 }
+
+export default Juego;
