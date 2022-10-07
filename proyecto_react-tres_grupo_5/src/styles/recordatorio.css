@@ -1,0 +1,82 @@
+:root {
+  --var-colorBackground: #0c5a23;
+  --var-colorFont: #b4e7f8;
+  --var-colorOne: #152528;
+  --var-colorTwo: #08485e;
+  --var-colorThree: #3cb0cd;
+  --var-colorFour: #7cd5f3;
+  --var-colorFive: #adffbc;
+  --var-colorSix: #1bee9a;
+  --var-colorSeven: #21c063;
+  --var-colorEight: #229631;
+}
+
+body {
+  background-color: var(--var-colorEight);
+  color: var(--var-colorFont);
+  margin: 0;
+}
+
+/* --- Contenido --- */
+.h2__title-game-recordatorio {
+  background-color: var(--var-colorTwo);
+  box-shadow: 10px 10px var(--var-colorOne);
+  text-align: center;
+  margin: 15px 45px 0 45px;
+  font-size: 50px;
+}
+.div__recordatorio-conteiner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.h2__title {
+  background-color: var(--var-colorTwo);
+  box-shadow: 10px 10px var(--var-colorOne);
+  text-align: center;
+  margin: 20px 45px 0 45px;
+  font-size: 35px;
+  padding: 0 10px;
+}
+.ul__recordatorio {
+  background-color: var(--var-colorTwo);
+  box-shadow: 15px 15px var(--var-colorOne);
+  padding: 0 15px;
+  margin-top: 20px;
+}
+.li__recordatorio {
+  margin: 30px auto;
+  font-size: 25px;
+  list-style: none;
+}
+/* --- /Contenido --- */
+
+/* --- Botones --- */
+.divbutton-conteiner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button__return {
+  color: var(--var-colorFont);
+  background-color: var(--var-colorOne);
+  font-size: 40px;
+  border: 0;
+  cursor: pointer;
+  margin: 80px 50px 0 50px;
+  border: 2px solid var(--var-colorTwo);
+  border-radius: 5%;
+}
+.button__return:hover {
+  animation-name: buttonAnimation;
+  animation-duration: .5s;
+  animation-fill-mode: forwards;
+}
+@keyframes buttonAnimation {
+  100% {
+    background-color: var(--var-colorFour);
+    color: black;
+  }
+}
+/* --- /Botones --- */
