@@ -72,7 +72,7 @@ function Juego() {
         }
       </div>
       <div className='botones-page-game'>
-        <a href="/Banner"><button>Home</button></a>
+        <a href="/"><button>Home</button></a>
         <a href="/Juego"><button>Reiniciar</button></a>
       </div>
     </div>
