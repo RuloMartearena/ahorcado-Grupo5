@@ -1,0 +1,111 @@
+:root {
+  --var-colorBackground: #0c5a23;
+  --var-colorFont: #b4e7f8;
+  --var-colorOne: #152528;
+  --var-colorTwo: #08485e;
+  --var-colorThree: #3cb0cd;
+  --var-colorFour: #7cd5f3;
+  --var-colorFive: #adffbc;
+  --var-colorSix: #1bee9a;
+  --var-colorSeven: #21c063;
+  --var-colorEight: #229631;
+}
+
+body {
+  background-color: var(--var-colorEight);
+  color: var(--var-colorFont);
+  margin: 0;
+}
+
+/* --- Contenido --- */
+.h2title-game {
+  background-color: var(--var-colorTwo);
+  box-shadow: 10px 10px var(--var-colorOne);
+  text-align: center;
+  margin: 15px 45px 0 45px;
+  font-size: 50px;
+}
+.h2__desarrolladores {
+  text-align: center;
+  font-size: 35px;
+  color: var(--var-colorFont);
+  background-color: var(--var-colorTwo);
+  box-shadow: 10px 10px var(--var-colorOne);
+  margin: 20px 30% 0 30%;
+}
+.div__ul__name-one {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.div__ul__name-two {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.ul__name {
+  display: flex;
+}
+.p__desarrolladores {
+  background-color: var(--var-colorTwo);
+  padding: 0 5px;
+  border: 1px solid var(--var-colorThree);
+  border-radius: 5%;
+}
+.nameshort {
+  margin: 32px 60px 32px 51px;
+  background-color: var(--var-colorTwo);
+  padding: 0 5px;
+  border: 1px solid var(--var-colorThree);
+  border-radius: 5%;
+}
+.li__desarrolladores {
+  color: var(--var-colorFont);
+  font-size: 25px;
+  list-style: none;
+  margin: 0 20px 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.img__photo {
+  width: 200px;
+  height: 200px;
+  border: var(--var-colorThree) solid 2px;
+  border-radius: 25%;
+}
+.h3__numeroGrupo {
+  text-align: center;
+  font-size: 25px;
+  color: var(--var-colorFont);
+  background-color: var(--var-colorTwo);
+  box-shadow: 10px 10px var(--var-colorOne);
+  margin: 20px 45% 0px 45%;
+}
+.buttonGIT {
+  color: var(--var-colorFont);
+  background-color: var(--var-colorOne);
+  font-size: 20px;
+  cursor: pointer;
+  margin: 10px 50px 0 50px;
+  border: 2px solid var(--var-colorTwo);
+  border-radius: 5%;
+}
+.buttonGIT:hover {
+  animation-name: buttonAnimation;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+@keyframes buttonAnimation {
+  100% {
+    background-color: var(--var-colorFour);
+    color: black;
+  }
+}
+.info-conteiner {
+  margin-bottom: 10px;
+}
+/* --- /Contenido --- */
