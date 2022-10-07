@@ -99,12 +99,12 @@ body {
   animation-duration: 1s;
   animation-fill-mode: forwards;
 }
-/*@keyframes buttonAnimation {
+@keyframes buttonAnimation {
   100% {
     background-color: var(--var-colorFour);
     color: black;
   }
-}*/
+}
 .info-conteiner {
   margin-bottom: 10px;
 }
