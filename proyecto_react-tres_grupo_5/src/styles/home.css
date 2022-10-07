@@ -1,0 +1,64 @@
+:root {
+  --var-colorBackground: #335c67;
+  --var-colorFont: #fff3b0;
+  --var-colorOne: #e09f3e;
+  --var-colorTwo: #9e2a2b;
+  --var-colorThree: #540b0e;
+}
+
+body {
+  background-color: var(--var-colorBackground);
+  margin: 0;
+  color: var(--var-colorFont);
+}
+
+li {
+  list-style: none;
+}
+
+/* Inicio */
+.section__inicio-conteiner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+}
+
+.title_home{
+  background: black;
+  box-shadow: 5px 5px gray;
+  border-top-left-radius: 30px 30px;
+  border-bottom-right-radius: 30px 30px;
+  padding: 0 20px;
+  font-size: 30px;
+}
+
+.img__inico {
+  width: 300px;
+  height: auto;
+  border-radius: 20%;
+  box-shadow: 8px 8px gray;
+}
+
+.button_home{
+  background: black;
+  font-size: 20px;
+  border-radius: 25px;
+  display: inline-block;
+  box-shadow: 5px 5px gray;
+  border-radius: 25px;
+}
+
+.button_home:hover, .button_home:active, .button_home:focus{
+  color: black;
+  background-color: gray;
+}
+
+.button_font{
+  text-decoration: none;
+  color: #fff3b0;
+}
+
+
+/* /Inicio */
