@@ -1,22 +1,29 @@
 :root {
-  --var-colorBackground: #335c67;
-  --var-colorFont: #fff3b0;
-  --var-colorOne: #e09f3e;
-  --var-colorTwo: #9e2a2b;
-  --var-colorThree: #540b0e;
+  --var-colorBackground: #0c5a23;
+  --var-colorFont: #b4e7f8;
+  --var-colorOne: #152528;
+  --var-colorTwo: #08485e;
+  --var-colorThree: #3cb0cd;
+  --var-colorFour: #7cd5f3;
+  --var-colorFive: #adffbc;
+  --var-colorSix: #1bee9a;
+  --var-colorSeven: #21c063;
+  --var-colorEight: #229631;
 }
 
 body {
-  margin: 0;
-  background-color: var(--var-colorThree);
+  background-color: var(--var-colorEight);
   color: var(--var-colorFont);
+  margin: 0;
 }
-.h2__title-game-recordatorio{
-  background: gray;
-  box-shadow: 5px 5px black;
+
+/* --- Contenido --- */
+.h2__title-game-recordatorio {
+  background-color: var(--var-colorTwo);
+  box-shadow: 10px 10px var(--var-colorOne);
   text-align: center;
-  
-  
+  margin: 15px 45px 0 45px;
+  font-size: 50px;
 }
 .div__recordatorio-conteiner {
   display: flex;
@@ -24,40 +31,52 @@ body {
   align-items: center;
   justify-content: center;
 }
-
 .h2__title {
-  font-size: 40px;
-  background: black;
-  box-shadow: 5px 5px gray;
-  padding: 0 20px;
-  border-top-left-radius: 30px 30px;
-  border-bottom-right-radius: 30px 30px;
+  background-color: var(--var-colorTwo);
+  box-shadow: 10px 10px var(--var-colorOne);
+  text-align: center;
+  margin: 20px 45px 0 45px;
+  font-size: 35px;
+  padding: 0 10px;
 }
-
+.ul__recordatorio {
+  background-color: var(--var-colorTwo);
+  box-shadow: 15px 15px var(--var-colorOne);
+  padding: 0 15px;
+  margin-top: 20px;
+}
 .li__recordatorio {
-  list-style: none;
+  margin: 30px auto;
   font-size: 25px;
-  margin: 20px 0;
+  list-style: none;
+}
+/* --- /Contenido --- */
+
+/* --- Botones --- */
+.divbutton-conteiner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button__return {
   color: var(--var-colorFont);
-  background: black;
-  border-radius: 40px 40px;
-  box-shadow: 5px 5px gray;
-  padding: 0 20px;
+  background-color: var(--var-colorOne);
+  font-size: 40px;
+  border: 0;
+  cursor: pointer;
+  margin: 80px 50px 0 50px;
+  border: 2px solid var(--var-colorTwo);
+  border-radius: 5%;
 }
-
-
-.button__rec{
-  font-size: 20px;
-  background-color: black;
-  padding: .375rem .75rem;
-  border: 1px solid gray;
-  border-radius: 15px;
-  color: #fff3b0;
-  box-shadow: 3px 3px gray;
-  margin-bottom: 15px;
+.button__return:hover {
+  animation-name: buttonAnimation;
+  animation-duration: .5s;
+  animation-fill-mode: forwards;
 }
-
-.button__rec:hover, .button__rec:active, .button__rec:focus {
-  color: black;
-  background-color: #fff3b0;
+@keyframes buttonAnimation {
+  100% {
+    background-color: var(--var-colorFour);
+    color: black;
+  }
 }
+/* --- /Botones --- */
